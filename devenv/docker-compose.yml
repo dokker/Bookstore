@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - MSSQL_SA_PASSWORD=p4swd!Str0ng
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
