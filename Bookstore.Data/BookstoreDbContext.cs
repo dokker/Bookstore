@@ -9,6 +9,8 @@ public class BookstoreDbContext : DbContext
 {
     public DbSet<Author> Authors { get; set; }
     public DbSet<Book> Books { get; set; }
+    public DbSet<Genre> Genres { get; set; }
+    public DbSet<BookGenre> BookGenres { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -22,6 +24,8 @@ public class BookstoreDbContext : DbContext
 
         modelBuilder.ApplyConfiguration<Author>(new AuthorConfigurator());
         modelBuilder.ApplyConfiguration<Book>(new BookConfigurator());
+        modelBuilder.ApplyConfiguration<Genre>(new GenreConfigurator());
+        modelBuilder.ApplyConfiguration<BookGenre>(new BookGenreConfigurator());
 
         base.OnModelCreating(modelBuilder);
     }
