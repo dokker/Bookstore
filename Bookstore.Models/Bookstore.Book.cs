@@ -8,4 +8,5 @@ public class Book
     public DateTime PublicationDate { get; set; }
     public Guid AuthorId { get; set; }
     public Author Author { get; set; }
+    public List<BookGenre> BookGenres { get; set; }
 }

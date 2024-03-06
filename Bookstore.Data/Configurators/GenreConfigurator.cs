@@ -4,13 +4,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Bookstore.Data.Configurators;
 
-public class BookConfigurator : IEntityTypeConfiguration<Book>
+public class GenreConfigurator : IEntityTypeConfiguration<Genre>
 {
-    public void Configure(EntityTypeBuilder<Book> builder)
+    public void Configure(EntityTypeBuilder<Genre> builder)
     {
-        builder.ToTable(nameof(Book));
+        builder.ToTable(nameof(Genre));
         builder.HasKey(x => x.Id);
-        builder.HasOne<Author>(x => x.Author);
         builder.HasMany<BookGenre>(x => x.BookGenres);
     }
 }
